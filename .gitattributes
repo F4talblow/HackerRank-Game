@@ -1,2 +1,13 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+def minion_game(string):
+    vowels = ['A', 'E', 'I', 'O', 'U']
+    l = len(string)
+    #consScore = len([ss for ss in [string[i:j] for i in range(0, l) for j in range(i+1, l+1) if string[i] not in vowels]])
+    #vowScore = len([ss for ss in [string[i:j] for i in range(0, l) for j in range(i+1, l+1) if string[i] in vowels]])
+    consScore = sum(l-i for i in range(0, l) if string[i] not in vowels)
+    vowScore = sum(l-i for i in range(0, l) if string[i] in vowels)
+    if(consScore>vowScore):
+        print('Stuart', consScore)
+    elif(vowScore>consScore):
+        print('Kevin', vowScore)
+    else:
+        print('Draw')
